@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-// import { View, ActivityIndicator } from 'react-native';
+import React, {Component} from 'react';
+import {View, ActivityIndicator} from 'react-native';
 // import cu from '../../utils/common';
 // import Login from '../login';
 // import UnknowException from '../unknowException';
@@ -7,22 +7,21 @@ import React, { Component } from 'react';
 // import styles from './styles';
 import Container from './container';
 
-class Main extends Component{
-  constructor(props){
+class Main extends Component {
+  constructor(props) {
     super(props);
 
     this.state = {
       isLoggedIn: false,
-      checkingAuth: true
-    }
+      checkingAuth: true,
+    };
     this.onLogin = this.onLogin.bind(this);
     this.onLogout = this.onLogout.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     // AuthService.getAuthInfo((error, authInfo) => {
     //   if(error) throw error;
-
     //   this.setState({
     //     checkingAuth: false,
     //     isLoggedIn: (!cu.isBlank(authInfo) && !cu.isBlank(authInfo.user)) ? true : false,
@@ -30,20 +29,18 @@ class Main extends Component{
     //   })
     // });
   }
-  
-  onLogin(){
-    this.setState({ isLoggedIn: true });
+
+  onLogin() {
+    this.setState({isLoggedIn: true});
   }
 
-  onLogout(){
-    this.setState({ isLoggedIn: false });
+  onLogout() {
+    this.setState({isLoggedIn: false});
   }
 
-  render(){
-    let { isLoggedIn, checkingAuth, authInfo } = this.state;
-    return (
-      <Container authInfo={authInfo} onLogout={this.onLogout} />
-    );
+  render() {
+    let {isLoggedIn, checkingAuth, authInfo} = this.state;
+    return <Container authInfo={authInfo} onLogout={this.onLogout} />;
 
     // if(checkingAuth) {
     //   return (

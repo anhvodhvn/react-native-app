@@ -9,8 +9,10 @@ target 'AppLogistic' do
   use_react_native!(
     :path => config[:reactNativePath],
     # to enable hermes on iOS, change `false` to `true` and then install pods
-    :hermes_enabled => false
+    :hermes_enabled => true
   )
+
+  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
 
   target 'AppLogisticTests' do
     inherit! :complete
@@ -21,10 +23,12 @@ target 'AppLogistic' do
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
   # you should disable the next line.
-  #use_flipper!()
-  #use_flipper!({ 'Flipper' => '0.91.1', 'Flipper-Folly' => '2.6.7', 'Flipper-RSocket' => '1.4.3'})
   
-  #post_install do |installer|
-  #  react_native_post_install(installer)
-  #end
+  # fix xcode 12.5: https://github.com/facebook/react-native/issues/31480
+  #use_flipper!
+  use_flipper!({'Flipper' => '0.75.1', 'Flipper-Folly' => '2.5.3', 'Flipper-RSocket' => '1.3.1'})
+  
+  post_install do |installer|
+    flipper_post_install(installer)
+  end
 end
