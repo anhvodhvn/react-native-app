@@ -1,5 +1,5 @@
-const buffer = require('buffer');
-const AsyncStorage = require('react-native').AsyncStorage;
+import buffer from 'buffer';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const authKey = 'authKey';
 const userKey = 'userKey';
