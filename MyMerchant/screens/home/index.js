@@ -116,7 +116,7 @@ const MainCategory = ({categories}) => {
   );
 };
 
-const Home = () => {
+const Home = ({ }) => {
   const initialCurrentLocation = {
     streetName: 'Kuching',
     gps: {

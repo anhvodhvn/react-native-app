@@ -1,12 +1,12 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
-import { Welcome } from './screens/welcome';
-import { Home } from './screens/home';
+import Welcome from './screens/welcome';
+import Home from './screens/home';
 
 const Stack = createStackNavigator();
 
-function App() {
+const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -16,7 +16,7 @@ function App() {
           initialRouteName={'Home'}
       >
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Welcome" component={Welcome} />
+        {/* <Stack.Screen name="Welcome" component={Welcome} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
