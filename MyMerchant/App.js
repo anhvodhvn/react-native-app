@@ -13,10 +13,10 @@ const App = () => {
           screenOptions={{
               headerShown: false
           }}
-          initialRouteName={'Home'}
+          initialRouteName={'Welcome'}
       >
         <Stack.Screen name="Home" component={Home} />
-        {/* <Stack.Screen name="Welcome" component={Welcome} /> */}
+        <Stack.Screen name="Welcome" component={Welcome} />
       </Stack.Navigator>
     </NavigationContainer>
   );
