@@ -2,10 +2,8 @@
 import React from 'react';
 import {Image} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-
 import TabBarCustomButton from './tabBarCustomButton';
 import CustomTabBar from './customTabBar';
-
 import {Home} from '../screens';
 import {COLORS, icons} from '../constants';
 

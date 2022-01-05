@@ -2,7 +2,6 @@
 import React from 'react';
 import {View, TouchableOpacity} from 'react-native';
 import Svg, {Path} from 'react-native-svg';
-
 import {COLORS} from '../constants';
 
 const TabBarCustomButton = ({accessibilityState, children, onPress}) => {
