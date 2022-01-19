@@ -8,19 +8,22 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
+import Home from './screens/home';
 import Profile from './screens/profile';
 import Settings from './screens/settings';
 
-const Main = () => {
+const BottomNavigation = () => {
   return (
     <Tab.Navigator 
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
-          if (route.name === 'Profile') {
+          if (route.name === 'Home') {
             iconName = focused
               ? 'ios-information-circle'
               : 'ios-information-circle-outline';              
+          } else if (route.name === 'Profile') {
+            iconName = focused ? 'ios-list-box' : 'ios-list';
           } else if (route.name === 'Settings') {
             iconName = focused ? 'ios-list-box' : 'ios-list';
           }
@@ -30,6 +33,7 @@ const Main = () => {
         tabBarInactiveTintColor: 'gray',
       })}          
     >
+      <Tab.Screen name="Home" component={Home} options={{ headerShown: false }}/>
       <Tab.Screen name="Profile" component={Profile} options={{ headerShown: false }}/>
       <Tab.Screen name="Settings" component={Settings} options={{ headerShown: false }}/>
     </Tab.Navigator>
@@ -40,18 +44,8 @@ const App = () => {
   return (
     <>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Profile">
-          <Stack.Screen
-            name="Profile"
-            component={Profile}
-            options={{
-              title: 'Profile',
-              headerTitleAlign: 'center',              
-            }}
-          />
-
-          <Stack.Screen name="Main" component={Main} options={{title: 'Main Navigation'}} />
-                    
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="BottomNavigation" component={BottomNavigation} options={{title: 'App Merchant'}} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
