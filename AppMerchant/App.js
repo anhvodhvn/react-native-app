@@ -5,17 +5,23 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
-import BottomNavigation from './navigation/bottomNavigation';
+import Order from './screens/order';
+import Restaurant from './screens/restaurant';
+
+import Tabs from './navigation/tabs';
 
 const App = () => {
   return (
-    <>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="BottomNavigation" component={BottomNavigation} options={{title: 'App Merchant'}} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </>
+    <NavigationContainer>
+      <Stack.Navigator 
+        initialRouteName="Home"
+        screenOptions={{ headerShown: true }}
+      >
+        <Stack.Screen name="Home" component={Tabs} options={{title: 'Merchant'}} />
+        <Stack.Screen name="Order" component={Order} />
+        <Stack.Screen name="Restaurant" component={Restaurant} />
+      </Stack.Navigator>
+    </NavigationContainer>    
   );
 };
 
