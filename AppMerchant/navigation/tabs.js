@@ -4,11 +4,8 @@ import { View, Image, TouchableOpacity } from 'react-native';
 import { createBottomTabNavigator, BottomTabBar } from '@react-navigation/bottom-tabs';
 import Svg, { Path } from 'react-native-svg';
 import { isIphoneX } from 'react-native-iphone-x-helper';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import Home from '../screens/home';
-import Profile from '../screens/profile';
-import Settings from '../screens/settings';
 import { COLORS, icons } from '../constants';
 
 const Tab = createBottomTabNavigator();
@@ -192,30 +189,6 @@ const Tabs = () => {
         }}
       />
     </Tab.Navigator>
-
-    // <Tab.Navigator
-    //   screenOptions={({ route }) => ({
-    //     tabBarIcon: ({ focused, color, size }) => {
-    //       let iconName;
-    //       if (route.name === 'Home') {
-    //         iconName = focused
-    //           ? 'ios-information-circle'
-    //           : 'ios-information-circle-outline';
-    //       } else if (route.name === 'Profile') {
-    //         iconName = focused ? 'ios-list-box' : 'ios-list';
-    //       } else if (route.name === 'Settings') {
-    //         iconName = focused ? 'ios-list-box' : 'ios-list';
-    //       }
-    //       return <Ionicons name={iconName} size={size} color={color} />;
-    //     },
-    //     tabBarActiveTintColor: 'tomato',
-    //     tabBarInactiveTintColor: 'gray',
-    //   })}
-    // >
-    //   <Tab.Screen name="Home" component={Home} options={{ headerShown: false }}/>
-    //   <Tab.Screen name="Profile" component={Profile} options={{ headerShown: false }}/>
-    //   <Tab.Screen name="Settings" component={Settings} options={{ headerShown: false }}/>
-    // </Tab.Navigator>
   );
 };
 
