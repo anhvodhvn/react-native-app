@@ -7,7 +7,6 @@ const Stack = createStackNavigator();
 
 import Order from './screens/order';
 import Restaurant from './screens/restaurant';
-
 import Tabs from './navigation/tabs';
 
 const App = () => {
@@ -15,9 +14,11 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator 
         initialRouteName="Home"
-        screenOptions={{ headerShown: true }}
+        screenOptions={{ 
+          headerShown: false 
+        }}
       >
-        <Stack.Screen name="Home" component={Tabs} options={{title: 'Merchant'}} />
+        <Stack.Screen name="Home" component={Tabs} />
         <Stack.Screen name="Order" component={Order} />
         <Stack.Screen name="Restaurant" component={Restaurant} />
       </Stack.Navigator>

@@ -476,13 +476,12 @@ function Home({ navigation }) {
               {/* Price */}
               {
                 [1, 2, 3].map((priceRating) => (
-                    <Text
-                        key={priceRating}
+                  <Text key={priceRating}
                         style={{
-                            ...FONTS.body3,
-                            color: (priceRating <= item.priceRating) ? COLORS.black : COLORS.darkgray
+                          ...FONTS.body3,
+                          color: (priceRating <= item.priceRating) ? COLORS.black : COLORS.darkgray
                         }}
-                    >$</Text>
+                  >$</Text>
                 ))
               }
             </View>
