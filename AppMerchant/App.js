@@ -1,26 +1,28 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
-import {NavigationContainer} from '@react-navigation/native';
-
-import Tabs from './navigation/tabs';
-import {Home, Restaurant, Order, Delivery} from './screens';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
+
+import Order from './screens/order';
+import Restaurant from './screens/restaurant';
+import Tabs from './navigation/tabs';
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
+      <Stack.Navigator 
+        initialRouteName="Home"
+        screenOptions={{ 
+          headerShown: false 
         }}
-        initialRouteName={'Home'}>
+      >
         <Stack.Screen name="Home" component={Tabs} />
-        <Stack.Screen name="Restaurant" component={Restaurant} />
         <Stack.Screen name="Order" component={Order} />
-        <Stack.Screen name="Delivery" component={Delivery} />
+        <Stack.Screen name="Restaurant" component={Restaurant} />
       </Stack.Navigator>
-    </NavigationContainer>
+    </NavigationContainer>    
   );
 };
 

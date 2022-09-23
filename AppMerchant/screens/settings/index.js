@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-function OrdersScreen() {
+function SettingsScreen() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Orders Screen !</Text>
+        <Text>Settings Screen !</Text>
       </View>
     );
 }
 
-export default OrdersScreen;
+export default SettingsScreen;
